@@ -13,6 +13,7 @@ Angola:🇦🇴:Angola
 Anguilla:🇦🇮:Anguilla
 Antarctica:🇦🇶:Antarctica
 Antigua & Barbuda:🇦🇬:Antigua & Barbuda
+Apple::Apple
 Aquarius:♒:Aquarius
 Argentina:🇦🇷:Argentina
 Aries:♈:Aries
