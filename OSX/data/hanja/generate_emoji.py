@@ -45,9 +45,15 @@ def generate_emoji(filename: str = 'emoji-test.txt') -> int:
     for line in qualified_lines:
         data.append(_get_emoji_data(line))
 
-    with open('test.txt', 'w') as test
-    desc, unicode, emoji = TestGenerateemoji.test_get_emoji_data()._get_emoji_data(lines[5])
+    with open('apple logos.txt', 'r', encoding='utf-8') as file:
+        file_lines = file.readlines()
     
+    qualified_lines = _get_fully_qualified_lines(file_lines)
+    
+    for line in qualified_lines:
+        data.append(_get_emoji_data(line))
+
+
     data.sort()  # XXX: search uses binary search algorithm
 
     with open('emoji.txt', 'w') as file:
@@ -131,7 +137,6 @@ class TestGenerateemoji(unittest.TestCase):
                  '1F469 1F3FC                                ; fully-qualified     # 👩🏼 woman: medium-light skin tone',
                  '1F469 200D 2695 FE0F                       ; fully-qualified     # 👩‍⚕️ woman health worker',
                  '1F3CA 1F3FB 200D 2642 FE0F                 ; fully-qualified     # 🏊🏻‍♂️ man swimming: light skin tone',
-                 'F8FF                                       ; fully-qualified     #  apple logo',
         ]
 
         desc, unicode, emoji = _get_emoji_data(lines[0])
@@ -154,10 +159,6 @@ class TestGenerateemoji(unittest.TestCase):
         self.assertEqual(unicode, '1F3CA 1F3FB 200D 2642 FE0F')
         self.assertEqual(emoji, '🏊🏻‍♂️')
         self.assertEqual(desc, 'man swimming; light skin tone')
-        
-        self.assertEqual(unicode, 'F8FF')
-        self.assertEqual(emoji, '')
-        self.assertEqual(desc, 'apple logo')
 
 
 
